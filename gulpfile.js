@@ -24,6 +24,7 @@ var assetJs= {
         'node_modules/angular2/bundles/angular2.min.js',
         'node_modules/angular2/bundles/router.min.js',
         'node_modules/angular2/bundles/http.min.js',
+        'node_modules/immutable/dist/immutable.js'
 
 
     ],
@@ -31,8 +32,8 @@ var assetJs= {
 }
 
 gulp.task('libs', function () {
-    gulp.src(assetJs.Debug)
-        .pipe(uglify())
+   return gulp.src(assetJs.Debug)
+      //  .pipe(uglify())
         .pipe(concat("lib.js"))
         .pipe(gulp.dest('dist/libs'));
 });
@@ -56,8 +57,8 @@ gulp.task('browser-sync', function() {
             baseDir: "./dist",
         }
     });
-    gulp.watch("src/**/*.ts",["ts",'reload']);
-    gulp.watch("src/**/*.html",["html",'reload']);
+    gulp.watch("src/**/*.ts",["ts"]).on("change",  reload);
+    gulp.watch("src/**/*.html",["html"]).on("change",  reload);
 });
 
 gulp.task('html', function () {
@@ -72,10 +73,11 @@ gulp.task('html', function () {
         .pipe(gulp.dest('dist'));
     // .pipe( notify({message:"html deploy"}))
 });
-gulp.task('reload', function () {
+ function reload() {
     console.log("file changed")
     browserSync.reload();
-});
+     return gulp;
+};
 gulp.task('d', ['ts','libs','html','browser-sync']);
 gulp.task('default', ['ts','libs','html']);
 

@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Angular2 Demo1</title>
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
     <!-- build:libs -->
     <script src="../node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="../node_modules/systemjs/dist/system-polyfills.js"></script>
@@ -10,6 +17,7 @@
     <script src="../node_modules/systemjs/dist/system.src.js"></script>
     <script src="../node_modules/rxjs/bundles/Rx.js"></script>
     <script src="../node_modules/angular2/bundles/angular2.js"></script>
+    <script src="../node_modules/angular2/bundles/router.js"></script>
     <script src="../node_modules/angular2/bundles/http.dev.js"></script>
 
     <!-- endbuild -->
@@ -20,7 +28,10 @@
 
 </head>
 <body>
-   <my-app>Loading</my-app>
+
+    <!-- 单个page ,第一个.page默认被展示-->
+
+    <app></app>
 </body>
 
 </html>

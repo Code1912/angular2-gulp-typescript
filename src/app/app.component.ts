@@ -1,8 +1,20 @@
-import {Component} from  "angular2/core";
+import {Component,Provider} from  "angular2/core";
+import { RouteConfig,ROUTER_DIRECTIVES   } from 'angular2/router';
+import { ItemDetailComponent}from '../app/item-detail.component';
+import { IndexComponent}from '../app/index.component';
+import {CityService} from '../app/city.service';
 @Component({
-    selector:"my-app",
-    template:"<h1> Haha Template6666666666666666</h1>"
+    selector:"app",
+    templateUrl:"../app/app.component.html",
+    directives: [ROUTER_DIRECTIVES],
+    providers: [CityService]
 })
-export  class  AppComponent{
 
+@RouteConfig([
+
+    {path:"index",name:"Index",component:IndexComponent,useAsDefault:true},
+    {path:"item-detail",name:"Detail",component:ItemDetailComponent}
+])
+export  class  AppComponent {
+    title:string = 'First App';
 }

@@ -12,6 +12,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "immutable": "^3.7.6",
     "angular2": "^2.0.0-beta.17",
     "core-js": "^2.4.0",
     "rxjs": "5.0.0-beta.6",
@@ -45,6 +46,7 @@
     "gulp-typescript": "^2.13.6",
     "gulp-uglify": "^1.5.3",
     "gulp-webpack": "^1.5.0",
+    "ionic": "^1.7.16",
     "lite-server": "^2.2.0",
     "style-loader": "^0.13.0",
     "tslint": "^3.14.0",
