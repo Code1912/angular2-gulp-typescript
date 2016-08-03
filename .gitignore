@@ -3,4 +3,7 @@
 dist/
 node_modules/
 typings/
- 
+npm*.log
+npm*.log.*
+src/**/*.js
+src/**/*.js.map
