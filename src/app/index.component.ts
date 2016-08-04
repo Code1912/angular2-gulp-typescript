@@ -6,7 +6,7 @@ import {Router} from 'angular2/router';
 import {City} from '../app/city'
 import {CityService} from '../app/city.service';
 
-import {Injectable} from 'angular2/core';
+//import {Injectable} from 'angular2/core';
 
 
 @Component({
@@ -23,7 +23,9 @@ export  class IndexComponent  implements  OnInit {
     }
 
     ngOnInit() {
-        this.cityList=this._cityService.getCities()
+        this._cityService.getCities().then(p=>{
+            this.cityList=p;
+        })
     }
     showDetail(city:City){
       this._router.navigate(["Detail",{code:city.code}]);

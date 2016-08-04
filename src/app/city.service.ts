@@ -1,8 +1,8 @@
 /**
  * Created by Code1912 on 2016/8/4.
  */
-import {Injectable} from 'angular2/core';
-import { Headers, Http } from 'angular2/http';
+//import {Injectable} from 'angular2/core';
+import { Http } from 'angular2/http';
 import {City} from '../app/city'
 import 'rxjs/add/operator/toPromise';
 
@@ -27,7 +27,8 @@ export class CityService {
 
     ];
     getCities() {
-        return   this.cityList;
+        return Promise.resolve(this.cityList);
+       // return   this.cityList;
     }
     getCity(code: number) {
         return this.cityList.filter(h => h.code === code)[0];

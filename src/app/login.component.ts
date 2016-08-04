@@ -6,13 +6,13 @@ import {Router,RouteParams} from 'angular2/router';
 import {City} from '../app/city'
 import {CityService} from '../app/city.service';
 @Component({
-    selector:"detail",
-    templateUrl:"../app/item-detail.component.html"
+    selector:"div[login]",
+    template:""
 })
 export  class ItemDetailComponent implements OnInit {
     city:City;
 
-    constructor(private _cityService:CityService, private _routeParams:RouteParams,private  _router:Router) {
+    constructor(private _cityService:CityService, private _routeParams:RouteParams) {
     }
 
     ngOnInit() {
@@ -21,7 +21,6 @@ export  class ItemDetailComponent implements OnInit {
     }
 
     goBack() {
-       // window.history.back();
-        this._router.navigate(["Index"]);
+        window.history.back();
     }
 }
