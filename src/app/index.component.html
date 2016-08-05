@@ -2,12 +2,8 @@
 
 <div class="list-block">
     <ul>
-        <li class="item-content item-link" (click)="showDetail(row)" *ngFor="let row of cityList">
-            <div class="item-media"><i class="icon icon-f7"></i></div>
-            <div class="item-inner">
-                <div class="item-title">{{row.name}}</div>
-                <div class="item-title">{{row.code}}</div>
-            </div>
+        <li row  [city]="item" class="item-content item-link" (click)="showDetail(item)" *ngFor="let item of cityList">
+
         </li>
     </ul>
 </div>

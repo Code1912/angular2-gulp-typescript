@@ -1,14 +1,31 @@
-<header class="bar bar-nav">
+<div class="view view-main"    >
+    <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+    <div class="pages  ">
+        <!-- Page, "data-page" contains page name -->
+        <div  class="page" (show)="!isLogin">
 
-    <h1 class="title"  >{{title}}</h1>
-</header>
-<nav class="bar bar-tab">
+            <!-- Top Navbar. In Material theme it should be inside of the page-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="center">{{title}}</div>
+                </div>
+            </div>
 
-</nav>
-<div class="content">
+            <!-- Bottom Toolbar. In Material theme it should be inside of the page-->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
+                    <a href="#" class="link">Link 1</a>
+                </div>
+            </div>
+            <!-- Scrollable page content -->
+            <div class="page-content">
+                 <router-outlet></router-outlet>
+            </div>
 
-        <router-outlet></router-outlet>
-
-
+        </div>
+        <div login class="page" (show)="isLogin"></div>
+    </div>
 </div>
-

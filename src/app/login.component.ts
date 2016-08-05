@@ -3,24 +3,19 @@
  */
 import {Component,OnInit} from  "angular2/core";
 import {Router,RouteParams} from 'angular2/router';
-import {City} from '../app/city'
+import {User} from '../app/user';
 import {CityService} from '../app/city.service';
 @Component({
     selector:"div[login]",
-    template:""
+    templateUrl:"../app/login.component.html"
 })
-export  class ItemDetailComponent implements OnInit {
-    city:City;
+export  class LoginComponent implements OnInit {
+    user:User;
+    constructor(private _cityService:CityService) {
 
-    constructor(private _cityService:CityService, private _routeParams:RouteParams) {
     }
 
     ngOnInit() {
-        var code = parseInt(this._routeParams.get("code"));
-        this.city=  this._cityService.getCity(code)
-    }
 
-    goBack() {
-        window.history.back();
     }
 }
