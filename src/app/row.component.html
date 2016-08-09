@@ -1,5 +1,5 @@
 
 <div   class="item-inner">
-    <div class="item-title">{{city.name}}</div>
-    <div class="item-title">{{city.code}}</div>
+    <div class="item-title" #divTitle> <span> {{city.name}}</span></div>
+    <div class="item-title" #divCode   (focus)="codeFocus()">--------{{city.code}}</div>
 </div>
