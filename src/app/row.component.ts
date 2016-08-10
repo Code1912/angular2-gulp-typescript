@@ -5,7 +5,6 @@ import {Component,OnInit,Input ,AfterViewInit,Renderer,ViewChild,ElementRef} fro
 import {Router,RouteParams} from 'angular2/router';
 import {City} from '../app/city'
 import {CityService} from '../app/city.service';
-import any = jasmine.any;
 @Component({
     selector:"li[row]",
     templateUrl:"../app/row.component.html",
